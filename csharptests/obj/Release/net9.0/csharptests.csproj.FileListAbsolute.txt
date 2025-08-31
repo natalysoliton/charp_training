@@ -1,0 +1,6 @@
+C:\git\charp_training\csharptests\obj\Release\net9.0\csharptests.csproj.AssemblyReference.cache
+C:\git\charp_training\csharptests\obj\Release\net9.0\csharptests.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\charp_training\csharptests\obj\Release\net9.0\csharptests.AssemblyInfoInputs.cache
+C:\git\charp_training\csharptests\obj\Release\net9.0\csharptests.AssemblyInfo.cs
+C:\git\charp_training\csharptests\obj\Release\net9.0\csharptests.csproj.CoreCompileInputs.cache
+C:\git\charp_training\csharptests\obj\Release\net9.0\csharptests.sourcelink.json

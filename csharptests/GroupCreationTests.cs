@@ -37,9 +37,8 @@ namespace WebAddressbookTests
            {
                 // Ignore errors if unable to close the browser
             }
-            Assert.AreEqual(
-                "", verificationErrors.ToString());
-       }
+            Assert.AreEqual("", verificationErrors.ToString());
+        }
 
         [Test]
         public void GroupCreationTest()
