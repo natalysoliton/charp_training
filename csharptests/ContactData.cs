@@ -60,6 +60,5 @@ namespace WebAddressbookTests
             set { mobile = value; }
         }
     }
-
 }
 
