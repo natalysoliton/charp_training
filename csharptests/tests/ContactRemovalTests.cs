@@ -1,0 +1,28 @@
+using NUnit.Framework;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+//using NUnit.Framework.Legacy;
+
+namespace WebAddressbookTests
+{
+	[TestFixture]
+	public class ContactRemovalTests : AuthTestBase
+	{
+		[Test]
+		public void ContactRemovalTest()
+		{
+			if (!app.Contacts.IsContactPresent()) 
+			{
+				ContactData contact = new ContactData("Тест");
+				app.Contacts.Create(contact);
+			}
+
+			List<ContactData> oldContacts = app.Contacts.GetContactList();
+			app.Contacts.Remove(0);
+			List<ContactData> newContacts = app.Contacts.GetContactList();
+			oldContacts.RemoveAt(0);
+			oldContacts.Sort();
+			newContacts.Sort();
+            Assert.AreEqual(oldContacts, newContacts);
+		}
+	}
+}

@@ -51,35 +51,21 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "MSTest": {
+              "target": "Package",
+              "version": "[3.6.4, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.12.0, )"
             },
             "NUnit": {
               "target": "Package",
-              "version": "[2.6.4, )"
-            },
-            "NUnit.Analyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[4.10.0, )"
-            },
-            "NUnit.Extension.NUnitProjectLoader": {
-              "target": "Package",
-              "version": "[3.8.0, )"
+              "version": "[4.3.2, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.6.0, )"
-            },
-            "NUnitTestAdapter": {
-              "target": "Package",
-              "version": "[2.3.0, )"
-            },
-            "Selenium.Firefox.WebDriver": {
-              "target": "Package",
-              "version": "[0.27.0, )"
+              "version": "[5.0.0, )"
             },
             "Selenium.Support": {
               "target": "Package",
@@ -89,17 +75,9 @@
               "target": "Package",
               "version": "[4.34.0, )"
             },
-            "Selenium.WebDriver.ChromeDriver": {
+            "WebDriverManager": {
               "target": "Package",
-              "version": "[139.0.7258.6600, )"
-            },
-            "Selenium.WebDriver.Extensions": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[2.16.2, )"
             }
           },
           "imports": [
