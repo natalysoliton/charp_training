@@ -1,5 +1,6 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+//using NUnit.Framework.Legacy;
 
 namespace WebAddressbookTests
 {
@@ -21,7 +22,7 @@ namespace WebAddressbookTests
 			oldContacts.RemoveAt(0);
 			oldContacts.Sort();
 			newContacts.Sort();
-			ClassicAssert.AreEqual(oldContacts, newContacts);
+            Assert.AreEqual(oldContacts, newContacts);
 		}
 	}
 }

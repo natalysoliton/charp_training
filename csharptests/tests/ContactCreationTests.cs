@@ -1,5 +1,6 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
+
+//using NUnit.Framework.Legacy;
 //using System.Security.Cryptography;
 
 namespace WebAddressbookTests
@@ -21,7 +22,7 @@ namespace WebAddressbookTests
             oldContacts.Add(contact);
             oldContacts.Sort();
             newContacts.Sort();
-            ClassicAssert.AreEqual(oldContacts, newContacts);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(oldContacts, newContacts);
         }
     }
 }
