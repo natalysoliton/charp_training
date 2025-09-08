@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 //using NUnit.Framework.Legacy;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,38 +11,29 @@ namespace WebAddressbookTests
     [TestFixture]
     public class GroupCreationTests : AuthTestBase
     {
-        [Test]
-        public void GroupCreationTest()
+        public static IEnumerable<GroupData> RndomGroupDataProvider()
         {
-            GroupData group = new GroupData("aa");
-            group.Header = "bb";
-            group.Footer = "sdv";
+            List<GroupData> groups = new List<GroupData>();
+            for (int i = 0; i < 5; i++)
+            {
+                groups.Add(new GroupData(GenetateRandomString(30))
+                {
+                    Header = GenetateRandomString(100),
+                    Footer = GenetateRandomString(100)
+                });
+            }
 
-            List<GroupData> oldGroups = app.Groups.GetGroupList(); 
-
-            app.Groups.Create(group);
-
-            Assert.AreEqual(oldGroups.Count + 1, app.Groups.GetGroupCount());
-
-            List<GroupData> newGroups = app.Groups.GetGroupList(); 
-            oldGroups.Add(group);
-            oldGroups.Sort();
-            newGroups.Sort();
-            Assert.AreEqual(oldGroups, newGroups); 
+            return groups;
         }
 
-        [Test]
-        public void EmptyGroupCreationTest()
+        [Test, TestCaseSource("RndomGroupDataProvider")]
+        public void GroupCreationTest(GroupData group)
         {
-            GroupData group = new GroupData("");
-            group.Header = "";
-            group.Footer = "";
-
             List<GroupData> oldGroups = app.Groups.GetGroupList();
 
             app.Groups.Create(group);
 
-            Assert.AreEqual(oldGroups.Count + 1, app.Groups.GetGroupCount()); 
+            Assert.AreEqual(oldGroups.Count + 1, app.Groups.GetGroupCount());
 
             List<GroupData> newGroups = app.Groups.GetGroupList();
             oldGroups.Add(group);
@@ -50,19 +43,20 @@ namespace WebAddressbookTests
         }
 
         [Test]
-        public void BadGroupCreationTest()
+        public void BadNameGroupCreationTest()
         {
-            GroupData group = new GroupData("a'b");
+            GroupData group = new GroupData("a'a");
             group.Header = "";
             group.Footer = "";
 
-            List<GroupData> oldGroups = app.Groups.GetGroupList();
 
-            app.Groups.Create(group);
+            List<GroupData> oldGroups = app.Groups.GetGroupList(); 
+
+            app.Groups.Create(group); 
 
             Assert.AreEqual(oldGroups.Count + 1, app.Groups.GetGroupCount()); 
 
-            List<GroupData> newGroups = app.Groups.GetGroupList();
+            List<GroupData> newGroups = app.Groups.GetGroupList(); 
             oldGroups.Add(group);
             oldGroups.Sort();
             newGroups.Sort();
