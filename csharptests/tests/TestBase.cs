@@ -14,16 +14,32 @@ namespace WebAddressbookTests
         }
 
         public static Random rnd = new Random();
-
-        public static string GenetateRandomString(int max)
+        public static string GenerateRandomString(int max)
         {
             int l = Convert.ToInt32(rnd.NextDouble() * max);
+
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < l; i++)
             {
-                builder.Append(Convert.ToChar(32 + Convert.ToInt32(rnd.NextDouble() * 223)));
+                int randomValue = Convert.ToInt32(rnd.NextDouble() * 62);
+
+                if (randomValue < 26) 
+                {
+                    builder.Append(Convert.ToChar(65 + randomValue));
+                }
+                else if (randomValue < 52) 
+                {
+                    builder.Append(Convert.ToChar(97 + (randomValue - 26)));
+                }
+                else 
+                {
+                    builder.Append(Convert.ToChar(48 + (randomValue - 52)));
+                }
             }
             return builder.ToString();
         }
     }
 }
+
+
+
