@@ -3,9 +3,7 @@ using NUnit.Framework.Legacy;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-
-
-//using NUnit.Framework.Legacy;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
@@ -33,7 +31,7 @@ namespace WebAddressbookTests
         public static IEnumerable<GroupData> GroupDataFromCsvFile()
         {
             List<GroupData> groups = new List<GroupData>();
-            string[] lines = File.ReadAllLines(@"groups.csv"); // Читаем данные из файла
+            string[] lines = File.ReadAllLines(@"groups.csv"); 
             foreach (string l in lines)
             {
                 string[] parts = l.Split(',');
@@ -52,8 +50,14 @@ namespace WebAddressbookTests
                 new XmlSerializer(typeof(List<GroupData>))
                     .Deserialize(new StreamReader(@"groups.xml"));
         }
+        public static IEnumerable<GroupData> GroupDataFromJsonFile()
+        {
+            return JsonConvert.DeserializeObject<List<GroupData>>(
+                File.ReadAllText(@"groups.json"));
+        }
 
-        [Test, TestCaseSource("GroupDataFromXmlFile")]
+
+        [Test, TestCaseSource("GroupDataFromJsonFile")]
 
         public void GroupCreationTest(GroupData group)
         {
@@ -69,26 +73,5 @@ namespace WebAddressbookTests
             newGroups.Sort();
             Assert.AreEqual(oldGroups, newGroups);
         }
-
-        //      [Test]
-        //       public void BadNameGroupCreationTest()
-        //       {
-        //    GroupData group = new GroupData("a'a");
-        //   group.Header = "";
-        //  group.Footer = "";
-
-
-        //  List<GroupData> oldGroups = app.Groups.GetGroupList(); 
-
-        //  app.Groups.Create(group); 
-
-        // Assert.AreEqual(oldGroups.Count + 1, app.Groups.GetGroupCount()); 
-
-        // List<GroupData> newGroups = app.Groups.GetGroupList(); 
-        // oldGroups.Add(group);
-        // oldGroups.Sort();
-        // newGroups.Sort();
-        // Assert.AreEqual(oldGroups, newGroups);
-        // }
-    }
+   }
 }

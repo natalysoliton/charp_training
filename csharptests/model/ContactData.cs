@@ -170,6 +170,7 @@ namespace WebAddressbookTests
 
         public object LastName { get; private set; }
         public string FirstName { get; private set; }
+        public string lastName { get; internal set; }
 
         private string CleanUpPhoneInDetails(string homePhone, string mobilePhone, string workPhone)
         {

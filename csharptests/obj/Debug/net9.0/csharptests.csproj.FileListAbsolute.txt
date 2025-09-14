@@ -368,3 +368,9 @@ C:\qa\charp_training\csharptests\obj\Debug\net9.0\refint\csharptests.dll
 C:\qa\charp_training\csharptests\obj\Debug\net9.0\csharptests.pdb
 C:\qa\charp_training\csharptests\obj\Debug\net9.0\csharptests.genruntimeconfig.cache
 C:\qa\charp_training\csharptests\obj\Debug\net9.0\ref\csharptests.dll
+C:\qa\charp_training\csharptests\bin\Debug\net9.0\groups.csv
+C:\qa\charp_training\csharptests\bin\Debug\net9.0\groups.xml
+C:\qa\charp_training\csharptests\bin\Debug\net9.0\contacts.csv
+C:\qa\charp_training\csharptests\bin\Debug\net9.0\contacts.json
+C:\qa\charp_training\csharptests\bin\Debug\net9.0\contacts.xml
+C:\qa\charp_training\csharptests\bin\Debug\net9.0\groups.json

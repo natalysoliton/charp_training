@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csharptests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc7550940a013accbd7955269125ef11beaa2fd0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e138687a113937e726c4ebc3e7274a035f63e54")]
 [assembly: System.Reflection.AssemblyProductAttribute("csharptests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csharptests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
