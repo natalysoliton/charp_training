@@ -1,9 +1,14 @@
+using System;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
+
 
 
 namespace WebAddressbookTests
 {
     public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
+
     {
         private string allPhones;
         private string allEmail;
@@ -165,6 +170,7 @@ namespace WebAddressbookTests
 
         public object LastName { get; private set; }
         public string FirstName { get; private set; }
+        public string lastName { get; internal set; }
 
         private string CleanUpPhoneInDetails(string homePhone, string mobilePhone, string workPhone)
         {
@@ -234,5 +240,5 @@ namespace WebAddressbookTests
             }
             return email + "\r\n";
         }
-    }
+}
 }
