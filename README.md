@@ -1,1 +1,0 @@
-# charp_training
